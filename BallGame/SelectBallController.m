@@ -7,6 +7,8 @@
 //
 
 #import "SelectBallController.h"
+#import "CustomToast.h"
+#import "ConstantManager.h"
 
 @interface SelectBallController ()
 
@@ -14,6 +16,8 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *redBalls;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *blueBalls;
+@property (nonatomic) NSMutableArray *selectRedBalls;
+@property (nonatomic, assign) NSInteger selectedBlueBall;
 
 @end
 
@@ -22,21 +26,62 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _selectRedBalls = [NSMutableArray new];
+    _selectedBlueBall = -1;
     for(int i = 0; i< _redBalls.count;i++){
         UIButton *button = _redBalls[i];
         button.tag = i+1;
         [button setTitle:[NSString stringWithFormat:@"%.2d", i+1] forState:UIControlStateNormal];
+        [button setBackgroundColor:[UIColor redColor]];
+        [button addTarget:self action:@selector(didTapBall:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     for(int i = 0; i< _blueBalls.count;i++){
         UIButton *button = _blueBalls[i];
         button.tag = i+100;
         [button setTitle:[NSString stringWithFormat:@"%.2d", i+1] forState:UIControlStateNormal];
+        [button setBackgroundColor:[UIColor blueColor]];
+        [button addTarget:self action:@selector(didTapBall:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
 
+- (void)didTapBall : (id)sender
+{
+    UIButton *button = sender;
+    
+    if(button.tag <100){
+        if(!button.selected && ![_selectRedBalls containsObject:@(button.tag)] && _selectRedBalls.count<6){
+            [_selectRedBalls addObject:@(button.tag)];
+            button.selected = !button.selected;
+        }
+        else if(button.selected && [_selectRedBalls containsObject:@(button.tag)]){
+            [_selectRedBalls removeObject:@(button.tag)];
+            button.selected = !button.selected;
+        }
+    }
+    else{
+        for(UIButton *b in _blueBalls){
+            if(b.tag == button.tag){
+                b.selected = YES;
+                _selectedBlueBall = b.tag-100;
+            }
+            else{
+                b.selected = NO;
+            }
+        }
+        
+    }
+}
 
 - (IBAction)tapDone:(id)sender {
+    
+    if(_selectRedBalls.count != 6 || _selectedBlueBall == -1){
+        [CustomToast showHudToastWithString:@"请正确选择"];
+        return ;
+    }
+    [ConstantManager shareManager].redBalls = [NSArray arrayWithArray:_selectRedBalls];
+    [ConstantManager shareManager].blueBall = _selectedBlueBall;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

@@ -17,6 +17,10 @@
 		CCCD9FA01CF59026001F7F22 /* BallGameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD9F9F1CF59026001F7F22 /* BallGameUITests.m */; };
 		CCCD9FAF1CF596D8001F7F22 /* UIView+IBInspect.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD9FAE1CF596D8001F7F22 /* UIView+IBInspect.m */; };
 		CCCD9FB21CF5A199001F7F22 /* SelectBallController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD9FB11CF5A199001F7F22 /* SelectBallController.m */; };
+		CCCD9FB81CF5B1E6001F7F22 /* CustomToast.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD9FB41CF5B1E6001F7F22 /* CustomToast.m */; };
+		CCCD9FB91CF5B1E6001F7F22 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD9FB61CF5B1E6001F7F22 /* MBProgressHUD.m */; };
+		CCCD9FBC1CF5B246001F7F22 /* ConstantManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD9FBB1CF5B246001F7F22 /* ConstantManager.m */; };
+		CCCD9FBF1CF5B457001F7F22 /* OpenGifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD9FBE1CF5B457001F7F22 /* OpenGifyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,14 @@
 		CCCD9FAE1CF596D8001F7F22 /* UIView+IBInspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IBInspect.m"; sourceTree = "<group>"; };
 		CCCD9FB01CF5A199001F7F22 /* SelectBallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBallController.h; sourceTree = "<group>"; };
 		CCCD9FB11CF5A199001F7F22 /* SelectBallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBallController.m; sourceTree = "<group>"; };
+		CCCD9FB41CF5B1E6001F7F22 /* CustomToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomToast.m; path = Toast/CustomToast.m; sourceTree = "<group>"; };
+		CCCD9FB51CF5B1E6001F7F22 /* CustomToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomToast.h; path = Toast/CustomToast.h; sourceTree = "<group>"; };
+		CCCD9FB61CF5B1E6001F7F22 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Toast/MBProgressHUD.m; sourceTree = "<group>"; };
+		CCCD9FB71CF5B1E6001F7F22 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = Toast/MBProgressHUD.h; sourceTree = "<group>"; };
+		CCCD9FBA1CF5B246001F7F22 /* ConstantManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantManager.h; sourceTree = "<group>"; };
+		CCCD9FBB1CF5B246001F7F22 /* ConstantManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstantManager.m; sourceTree = "<group>"; };
+		CCCD9FBD1CF5B457001F7F22 /* OpenGifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGifyViewController.h; sourceTree = "<group>"; };
+		CCCD9FBE1CF5B457001F7F22 /* OpenGifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGifyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +119,17 @@
 		CCCD9F761CF59026001F7F22 /* BallGame */ = {
 			isa = PBXGroup;
 			children = (
+				CCCD9FB31CF5B1D8001F7F22 /* Toast */,
 				CCCD9FAD1CF596D8001F7F22 /* UIView+IBInspect.h */,
 				CCCD9FAE1CF596D8001F7F22 /* UIView+IBInspect.m */,
+				CCCD9FBA1CF5B246001F7F22 /* ConstantManager.h */,
+				CCCD9FBB1CF5B246001F7F22 /* ConstantManager.m */,
 				CCCD9F7D1CF59026001F7F22 /* FirstViewController.h */,
 				CCCD9F7E1CF59026001F7F22 /* FirstViewController.m */,
 				CCCD9FB01CF5A199001F7F22 /* SelectBallController.h */,
 				CCCD9FB11CF5A199001F7F22 /* SelectBallController.m */,
+				CCCD9FBD1CF5B457001F7F22 /* OpenGifyViewController.h */,
+				CCCD9FBE1CF5B457001F7F22 /* OpenGifyViewController.m */,
 				CCCD9F771CF59026001F7F22 /* Supporting Files */,
 			);
 			path = BallGame;
@@ -148,6 +165,17 @@
 				CCCD9FA11CF59026001F7F22 /* Info.plist */,
 			);
 			path = BallGameUITests;
+			sourceTree = "<group>";
+		};
+		CCCD9FB31CF5B1D8001F7F22 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD9FB41CF5B1E6001F7F22 /* CustomToast.m */,
+				CCCD9FB51CF5B1E6001F7F22 /* CustomToast.h */,
+				CCCD9FB61CF5B1E6001F7F22 /* MBProgressHUD.m */,
+				CCCD9FB71CF5B1E6001F7F22 /* MBProgressHUD.h */,
+			);
+			name = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,11 +308,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCCD9FBF1CF5B457001F7F22 /* OpenGifyViewController.m in Sources */,
 				CCCD9FB21CF5A199001F7F22 /* SelectBallController.m in Sources */,
+				CCCD9FBC1CF5B246001F7F22 /* ConstantManager.m in Sources */,
 				CCCD9F7C1CF59026001F7F22 /* AppDelegate.m in Sources */,
+				CCCD9FB81CF5B1E6001F7F22 /* CustomToast.m in Sources */,
 				CCCD9F7F1CF59026001F7F22 /* FirstViewController.m in Sources */,
 				CCCD9FAF1CF596D8001F7F22 /* UIView+IBInspect.m in Sources */,
 				CCCD9F791CF59026001F7F22 /* main.m in Sources */,
+				CCCD9FB91CF5B1E6001F7F22 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
